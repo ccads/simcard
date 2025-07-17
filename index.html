@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专注、诚信、便捷、隐私</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      background: #fff;
+      font-family: "微软雅黑", Arial, sans-serif;
+    }
+    .navbar {
+      background: #000000;
+      padding: 20px 0 20px 0;
+      text-align: right;
+    }
+    .navbar .btn {
+      background: #ff8800;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 32px;
+      font-size: 18px;
+      margin: 0 40px 0 0;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 40px auto 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 40px 0;
+    }
+    .left {
+      flex: 1.2;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .left img {
+      max-width: 90%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .right {
+      flex: 1.5;
+      padding: 0 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .right .tags {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .right .main-title {
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .right .divider {
+      height: 4px;
+      background: #ff8800;
+      width: 100%;
+      margin: 24px 0;
+      border-radius: 2px;
+    }
+    .right .desc {
+      color: #888;
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+    .right .btn {
+      background: #ff8800;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 12px 36px;
+      font-size: 18px;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.2s;
+    }
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        padding: 20px 0;
+      }
+      .left, .right {
+        padding: 0 20px;
+      }
+      .right {
+        padding-top: 20px;
+      }
+    }
+    @media (max-width: 600px) {
+      .navbar .btn {
+        font-size: 16px;
+        padding: 8px 18px;
+        margin: 0 10px 0 0;
+      }
+      .container {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+      .left, .right {
+        padding: 0 8px;
+      }
+      .right .main-title {
+        font-size: 22px;
+      }
+    }
+    .topbar {
+      background: #111;
+      color: #fff;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 110px;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .nav-item {
+      flex: 1 1 180px;
+      text-align: center;
+      padding: 20px 0 50px 0;
+    }
+    .nav-item i, .nav-item .icon {
+      font-size: 32px;
+      color: #ff8800;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .nav-item span {
+      display: block;
+      color: #fff;
+      font-size: 16px;
+      margin-top: 12px;
+      border-top: 2px solid #ff8800;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 8px;
+    }
+    .orange-line {
+      width: 100%;
+      height: 5px;
+      background: #ff8800;
+      margin: 0 auto 0 auto;
+    }
+    .main-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 500;
+      margin: 48px 0 0 0;
+      letter-spacing: 4px;
+    }
+    .main-title-underline {
+      width: 80px;
+      height: 4px;
+      background: #ff8800;
+      margin: 18px auto 40px auto;
+      border-radius: 2px;
+    }
+    .card-section {
+      max-width: 1200px;
+      margin: 0 auto 60px auto;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      width: 340px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      border: 1px solid #eee;
+    }
+    .card img {
+      width: 80%;
+      display: block;
+    }
+    .card-yellow-bar {
+      background: #222;
+      color: #ffe600;
+      font-size: 18px;
+      font-weight: bold;
+      width: 100%;
+      text-align: center;
+      padding: 8px 0;
+      letter-spacing: 1px;
+    }
+    .card-caption {
+      font-size: 20px;
+      font-weight: 500;
+      margin: 18px 0 8px 0;
+      text-align: center;
+      color: #222;
+    }
+    .card-desc {
+      color: #666;
+      font-size: 15px;
+      text-align: center;
+      margin-bottom: 18px;
+      padding: 0 12px;
+    }
+    @media (max-width: 1100px) {
+      .card-section {
+        gap: 18px;
+      }
+      .card {
+        width: 45vw;
+        min-width: 220px;
+        max-width: 340px;
+      }
+    }
+    @media (max-width: 800px) {
+      .card-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+      .card {
+        width: 90vw;
+        min-width: 0;
+        margin-bottom: 24px;
+      }
+      .main-title {
+        font-size: 22px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="click/" class="btn" target="_blank" style="text-decoration:none;">点击联系我们Telegram</a>
+      </div>
+      <div class="container">
+        <div class="left">
+          <img src="img/sjk.jpg" alt="实拍图片">
+        </div>
+        <div class="right">
+          <div class="tags">
+            匿名上网卡 已实名三网卡 电销卡 广电卡 国内流量卡 国内注册卡 香港电话卡 香港流量卡 香港注册卡
+          </div>
+          <div class="main-title">
+            如果没有Telegram 可以联系底部右下角的在线客服<br>
+            老年人身份实名的卡 长久稳定耐用
+          </div>
+          <div class="divider"></div>
+          <div class="desc">
+            专业售后，已实名手机卡出售。
+          </div>
+          <a href="click/" class="btn" target="_blank" style="text-decoration:none;">点击联系我们Telegram</a>
+        </div>
+      </div>
+    
+  <div class="topbar">
+    <div class="nav-item">
+      <i class="fas fa-key"></i>
+      <span>#出售手机卡</span>
+    </div>
+    <div class="nav-item">
+      <i class="fas fa-burger"></i>
+      <span>#上网卡接码卡</span>
+    </div>
+    <div class="nav-item">
+      <i class="fas fa-pen-to-square"></i>
+      <span>#已实名手机卡</span>
+    </div>
+    <div class="nav-item">
+      <i class="fas fa-utensils"></i>
+      <span>#无线网络卡</span>
+    </div>
+  </div>
+  <div class="orange-line"></div>
+  <div class="main-title">
+    专注、诚信、便捷、隐私
+    <div class="main-title-underline"></div>
+  </div>
+  <div class="card-section">
+    <div class="card">
+      <img src="img/yd.jpg" alt="已实名手机卡">
+      <div class="card-yellow-bar">出售已实名的手机卡：中国移动</div>
+      <div class="card-caption">已实名手机卡哪里出售</div>
+      <div class="card-desc">不记名手机卡哪里能买到</div>
+    </div>
+    <div class="card">
+      <img src="img/lt.jpg" alt="匿名手机卡">
+      <div class="card-yellow-bar">出售已实名的手机卡：中国联通</div>
+      <div class="card-caption">匿名手机卡找谁能买到</div>
+      <div class="card-desc">实名过的手机卡</div>
+    </div>
+    <div class="card">
+      <img src="img/dx.jpg" alt="手机黑卡">
+      <div class="card-yellow-bar">出售已实名的手机卡：中国电信</div>
+      <div class="card-caption">手机黑卡在哪里买到</div>
+      <div class="card-desc">哪里出售实名手机卡</div>
+    </div>
+  </div>
+  <div class="card-section">
+    <div class="card">
+      <img src="img/hk.jpg" alt="已实名手机卡">
+      <div class="card-yellow-bar">香港实体电话卡</div>
+      <div class="card-caption">香港流量卡(可接短信可注册)</div>
+      <div class="card-desc">无线上网</div>
+    </div>
+    <div class="card">
+      <img src="img/tw.jpg" alt="匿名手机卡">
+      <div class="card-yellow-bar">台湾实体电话卡</div>
+      <div class="card-caption">匿名手机卡找谁能买到</div>
+      <div class="card-desc">实名过的手机卡</div>
+    </div>
+    <div class="card">
+      <img src="img/us.jpg" alt="手机黑卡">
+      <div class="card-yellow-bar">美国实体电话卡</div>
+      <div class="card-caption">短信接码，无线上网</div>
+      <div class="card-desc">哪里出售实名手机卡</div>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:32px auto 0 auto;text-align:center;color:#000000;font-size:14px;line-height:2;">
+    <a href="click/" target="_blank" style="background:#ff8800;color:#fff;border:none;border-radius:20px;padding:10px 32px;font-size:16px;cursor:pointer;margin-bottom:18px;display:inline-block;text-decoration:none;">联系我们</a>
+    <p style="margin-bottom:16px;">
+      无限流量卡-电信|联通|移动  0月租上网卡（无须实名）                          
+    </p>
+    <p>
+      实名手机卡哪里有卖的 哪里有卖不实名激活手机卡 已实名激活手机卡哪里有卖 网上哪里有不用实名制手机卡卖吗 哪里买免实名电话卡 非实名手机卡哪里有买 哪里有手机黑卡买 手机黑卡那里有卖 哪里有已激活手机卡买 哪里可以买已实名制激活手机卡 已经实名电话卡哪里有买 不实名电话卡哪里可以买到 无需实名激活手机卡一张多少钱
+    </p>
+    
+  </div>
+  <footer style="width:100%;background:#111;color:#fff;text-align:center;padding:32px 0 24px 0;font-size:15px;letter-spacing:1px;">
+    <div style="width:80px;height:4px;background:#ff8800;margin:0 auto 18px auto;border-radius:2px;"></div>
+    
+    <div>版权所有 © 2025</div>
+  </footer>
+</body>
+</html>
